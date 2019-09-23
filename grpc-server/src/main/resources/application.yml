@@ -1,0 +1,11 @@
+
+spring:
+  application:
+    name: local-grpc-server
+grpc:
+  server:
+    port: 9898
+server:
+  port: 9091
+  servlet:
+    context-path: /grpc-server

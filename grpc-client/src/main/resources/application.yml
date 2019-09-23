@@ -1,0 +1,17 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /grpc-client
+spring:
+  application:
+    name: local-grpc-client
+
+grpc:
+  client:
+    local-grpc-server:
+      host:
+      - ${LOCAL-GRPC-HOST:127.0.0.1}
+      port:
+      - 9898
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true

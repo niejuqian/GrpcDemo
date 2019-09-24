@@ -1,10 +1,10 @@
 syntax = "proto3";
 
 option java_package = "com.example.grpc.demo.lib";
-option java_outer_classname = "HelloProto";
+option java_outer_classname = "GrpcHelloProto";
 
 // The greeter service definition.
-service Greeter {
+service HelloProto {
     // Sends a greeting
     rpc SayHello ( HelloRequest) returns (  HelloReply) {}
 
@@ -16,4 +16,18 @@ message HelloRequest {
 // The response message containing the greetings
 message HelloReply {
     string message = 1;
+}
+
+
+service QueryWorkflowInfo {
+    rpc QueryWorkflow (QueryRequest) returns (QueryResponse) {}
+}
+
+message QueryRequest {
+    string requestId = 2;
+}
+
+message QueryResponse {
+    string workflowId = 1;
+    string workflowName =2;
 }
